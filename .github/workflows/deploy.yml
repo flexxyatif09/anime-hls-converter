@@ -16,6 +16,7 @@ jobs:
           version: latest
 
       - name: Deploy Function
-        run: supabase functions deploy get-mux-url --project-ref ${{ secrets.SUPABASE_PROJECT_ID }}
+        # Maine Project ID direct yahan likh di hai taaki secret ka jhanjhat khatam ho jaye
+        run: supabase functions deploy get-mux-url --project-ref qgnhmfjxkwdlvjlzcayt
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
