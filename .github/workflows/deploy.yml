@@ -20,3 +20,9 @@ jobs:
         run: supabase functions deploy get-mux-url --project-ref qgnhmfjxkwdlvjlzcayt
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      - name: Deploy Function
+        run: |
+          supabase functions deploy get-mux-url --project-ref qgnhmfjxkwdlvjlzcayt --no-verify-jwt
+          supabase functions deploy mux-webhook --project-ref qgnhmfjxkwdlvjlzcayt --no-verify-jwt
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
